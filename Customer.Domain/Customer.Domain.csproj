@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\Customer\INPUT\" />
+    <Folder Include="Entities\Customer\OUTPUT\" />
+  </ItemGroup>
+
 </Project>
