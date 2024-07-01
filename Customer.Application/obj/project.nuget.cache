@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "bJhjAOtAgmjj6dz3lxv6Br/ff7V+5ZglbIYgH/nEV3HmAm/SRTEdBCwW1rkjmc5lk+KadN8OExsm/fG3gBQV+w==",
+  "dgSpecHash": "cqEGiJrmtzG9e7egQKGQD8pC9xCS9d2M01IBmYNJQi3tYCfO9u8pGI1nWY4a6TiFcOdwV3jTb1vgibjp8Kag+g==",
   "success": true,
   "projectFilePath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Application\\Customer.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\mediatr\\12.3.0\\mediatr.12.3.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

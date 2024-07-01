@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "CyKfe7i0XgWpXp4lD63Hw7wh20PzTHOBUeMUw/2Wa4iPpcGU+jIthN5fX1SaPpK0s4OWO8laWlPz5Le0BJaxEg==",
+  "dgSpecHash": "bhFvU0zij6kBlWv3kd9VqdywFy47NuvZDVOl7Ah5AFKE2DJc5veN+pdpTGAW58iHQK2pAXisL2RILYtVE081+g==",
   "success": true,
   "projectFilePath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Infrastructure\\Customer.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
+  ],
   "logs": []
 }
