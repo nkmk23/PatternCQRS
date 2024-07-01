@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Customer.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Customer.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Customer.Domain.dll": {}
+        }
+      },
+      "Customer.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Customer.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Customer.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Customer.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Customer.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Customer.Domain/Customer.Domain.csproj",
+      "msbuildProject": "../Customer.Domain/Customer.Domain.csproj"
+    },
+    "Customer.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Customer.Infrastructure/Customer.Infrastructure.csproj",
+      "msbuildProject": "../Customer.Infrastructure/Customer.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Customer.Domain >= 1.0.0",
+      "Customer.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Application\\Customer.Application.csproj",
+      "projectName": "Customer.Application",
+      "projectPath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Application\\Customer.Application.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Application\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Domain\\Customer.Domain.csproj": {
+              "projectPath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Domain\\Customer.Domain.csproj"
+            },
+            "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Infrastructure\\Customer.Infrastructure.csproj": {
+              "projectPath": "C:\\Repositorios\\customerAPI\\PatternCQRS\\Customer.Infrastructure\\Customer.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
