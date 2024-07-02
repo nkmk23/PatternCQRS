@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "a098bf2c-5d31-465f-b718-a34ce73a69e2",
+		"name": "CustomerAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21085006"
+	},
+	"item": [
+		{
+			"name": "Consultar cliente por Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44306/api/Redarbor/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44306",
+					"path": [
+						"api",
+						"Redarbor",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*\r\n{\r\n  \"CompanyId\": 4,\r\n  \"CreatedOn\": \"2023-06-01T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"carlos.perez@example.com\",\r\n  \"Fax\": \"123-456-7890\",\r\n  \"Name\": \"Carlos Perez\",\r\n  \"LastLogin\": \"2023-07-01T08:00:00\",\r\n  \"Password\": \"Password1\",\r\n  \"PortalId\": 1,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"3101234567\",\r\n  \"UpdatedOn\": \"2023-07-10T14:00:00\",\r\n  \"Username\": \"carlosperez\"\r\n}\r\n*/\r\n\r\n\r\n{\r\n  \"CompanyId\": 4,\r\n  \"CreatedOn\": \"2023-06-02T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"maria.gomez@example.com\",\r\n  \"Fax\": \"098-765-4321\",\r\n  \"Name\": \"Maria Gomez\",\r\n  \"LastLogin\": \"2023-07-02T08:00:00\",\r\n  \"Password\": \"Password2\",\r\n  \"PortalId\": 1,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"3201234567\",\r\n  \"UpdatedOn\": \"2023-07-11T14:00:00\",\r\n  \"Username\": \"mariagomez\"\r\n}\r\n\r\n\r\n/*\r\n{\r\n  \"CompanyId\": 4,\r\n  \"CreatedOn\": \"2023-06-03T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"juan.rodriguez@example.com\",\r\n  \"Fax\": \"234-567-8901\",\r\n  \"Name\": \"Juan Rodriguez\",\r\n  \"LastLogin\": \"2023-07-03T08:00:00\",\r\n  \"Password\": \"Password3\",\r\n  \"PortalId\": 1,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"3301234567\",\r\n  \"UpdatedOn\": \"2023-07-12T14:00:00\",\r\n  \"Username\": \"juanrodriguez\"\r\n}\r\n*/\r\n\r\n/*\r\n{\r\n  \"CompanyId\": 4,\r\n  \"CreatedOn\": \"2023-06-04T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"ana.fernandez@example.com\",\r\n  \"Fax\": \"345-678-9012\",\r\n  \"Name\": \"Ana Fernandez\",\r\n  \"LastLogin\": \"2023-07-04T08:00:00\",\r\n  \"Password\": \"Password4\",\r\n  \"PortalId\": 1,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"3401234567\",\r\n  \"UpdatedOn\": \"2023-07-13T14:00:00\",\r\n  \"Username\": \"anafernandez\"\r\n}\r\n*/\r\n\r\n/*\r\n{\r\n  \"CompanyId\": 4,\r\n  \"CreatedOn\": \"2023-06-05T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"luis.martinez@example.com\",\r\n  \"Fax\": \"456-789-0123\",\r\n  \"Name\": \"Luis Martinez\",\r\n  \"LastLogin\": \"2023-07-05T08:00:00\",\r\n  \"Password\": \"Password5\",\r\n  \"PortalId\": 1,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"3501234567\",\r\n  \"UpdatedOn\": \"2023-07-14T14:00:00\",\r\n  \"Username\": \"luismartinez\"\r\n}\r\n*/\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44306/api/Redarbor",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44306",
+					"path": [
+						"api",
+						"Redarbor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CustomerId\": 5,  // Asegúrate de que este ID coincida con el ID en la URL\r\n  \"CompanyId\": 1,\r\n  \"CreatedOn\": \"2023-06-01T12:00:00\",\r\n  \"DeletedOn\": null,\r\n  \"Email\": \"updatedcustomer@example.com\",\r\n  \"Fax\": \"987-654-3210\",\r\n  \"Name\": \"Updated Name\",\r\n  \"LastLogin\": \"2023-07-01T08:00:00\",\r\n  \"Password\": \"UpdatedPassword1\",\r\n  \"PortalId\": 2,\r\n  \"RoleId\": 2,\r\n  \"StatusId\": 1,\r\n  \"Telephone\": \"9876543210\",\r\n  \"UpdatedOn\": \"2023-07-10T14:00:00\",\r\n  \"Username\": \"updatedusername1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44306/api/Redarbor/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44306",
+					"path": [
+						"api",
+						"Redarbor",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44306/api/Redarbor/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44306",
+					"path": [
+						"api",
+						"Redarbor",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44306/api/Redarbor",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44306",
+					"path": [
+						"api",
+						"Redarbor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
