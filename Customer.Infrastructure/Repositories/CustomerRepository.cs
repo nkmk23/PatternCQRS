@@ -48,6 +48,7 @@ namespace Customer.Infrastructure.Repositories
                           Username = @Username, UpdatedOn = @UpdatedOn WHERE CustomerId = @CustomerId;";
             return await connection.ExecuteAsync(query, new
             {
+                @CustomerId = customer.CustomerId,
                 @CompanyId = customer.CompanyId,
                 @Email = customer.Email,
                 @Fax = customer.Fax,
