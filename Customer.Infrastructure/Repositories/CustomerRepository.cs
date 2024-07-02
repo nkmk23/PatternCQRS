@@ -67,21 +67,21 @@ namespace Customer.Infrastructure.Repositories
         public async Task<int> DeleteCustomerAsync(int customerId)
         {
             using var connection = new SqlConnection(_connectionString);
-            var query = @"UPDATE FROM Customers SET StatusId = 2 WHERE CustomerId = @CustomerId;";
+            var query = @"UPDATE Customers SET StatusId = 2 WHERE CustomerId = @CustomerId;";
             return await connection.ExecuteAsync(query, new { CustomerId = customerId });
         }
 
         public async Task<CustomerDTO> GetCustomerByIdAsync(int customerId)
         {
             using var connection = new SqlConnection(_connectionString);
-            var query = @"SELECT * FROM Customers WHERE CustomerId = @CustomerId;";
+            var query = @"SELECT * FROM Customers WHERE CustomerId = @CustomerId AND StatusId = 1;";
             return await connection.QueryFirstOrDefaultAsync<CustomerDTO>(query, new { CustomerId = customerId });
         }
 
         public async Task<List<CustomerDTO>> GetAllCustomersAsync()  // Nueva implementación del método
         {
             using var connection = new SqlConnection(_connectionString);
-            var query = @"SELECT * FROM Customers;";
+            var query = @"SELECT * FROM Customers WHERE StatusId = 1;";
             var customers = await connection.QueryAsync<CustomerDTO>(query);
             return customers.ToList();
         }
