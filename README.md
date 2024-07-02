@@ -44,4 +44,7 @@ Sigue estos pasos para ejecutar el proyecto:
    - Si quiere acceder al detalle de como esta construida el API puede ingresar a SwaggerHub e importar el archivo que esta en la carpeta `Docs/Swagger`, para revisar como esta creado el API. O revisando el explorador encontrara la documentación tipo OpenApi del proyecto. 
   <img width="911" alt="image" src="https://github.com/nkmk23/PatternCQRS/assets/69180185/646a0b86-6112-4cc5-ba93-86cc5dcfac36">
 
-   
+## Falta por desarrollar: 
+- **Pruebas unitarias**
+- **Desplegar la solución en un contenedor para el consumo de los usuarios. (Docker)**
+- **Implementar procedimiento de autenticación. (Oauth2.0)**
