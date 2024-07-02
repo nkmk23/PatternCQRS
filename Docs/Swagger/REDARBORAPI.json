@@ -1,0 +1,510 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Customer API",
+    "description": "API para gestionar clientes en Redarbor",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "customers",
+      "description": "Operaciones disponibles para gestionar clientes"
+    }
+  ],
+  "paths": {
+    "/api/Redarbor": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Obtener todos los clientes",
+        "operationId": "getAllCustomers",
+        "responses": {
+          "200": {
+            "description": "Customers found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseListCustomerDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Crear un nuevo cliente",
+        "operationId": "createCustomer",
+        "requestBody": {
+          "description": "Datos del cliente a crear",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCustomerCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Customer created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseInt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Redarbor/{id}": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Obtener cliente por ID",
+        "operationId": "getCustomerById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseCustomerDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Actualizar un cliente",
+        "operationId": "updateCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Datos del cliente a actualizar",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomerCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Customer updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseInt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Eliminar un cliente",
+        "operationId": "deleteCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseInt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyResponseString"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateCustomerCommand": {
+        "required": [
+          "companyId",
+          "email",
+          "name",
+          "password",
+          "portalId",
+          "roleId",
+          "statusId",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "fax": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "password": {
+            "type": "string"
+          },
+          "portalId": {
+            "type": "integer"
+          },
+          "roleId": {
+            "type": "integer"
+          },
+          "statusId": {
+            "type": "integer"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateCustomerCommand": {
+        "required": [
+          "companyId",
+          "customerId",
+          "email",
+          "name",
+          "password",
+          "portalId",
+          "roleId",
+          "statusId",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "integer"
+          },
+          "companyId": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "fax": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "password": {
+            "type": "string"
+          },
+          "portalId": {
+            "type": "integer"
+          },
+          "roleId": {
+            "type": "integer"
+          },
+          "statusId": {
+            "type": "integer"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerDTO": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "integer"
+          },
+          "companyId": {
+            "type": "integer"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deletedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "email": {
+            "type": "string"
+          },
+          "fax": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "password": {
+            "type": "string"
+          },
+          "portalId": {
+            "type": "integer"
+          },
+          "roleId": {
+            "type": "integer"
+          },
+          "statusId": {
+            "type": "integer"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "updatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "BodyResponseInt": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "string"
+          },
+          "statusDesc": {
+            "type": "string"
+          },
+          "data": {
+            "type": "integer"
+          }
+        }
+      },
+      "BodyResponseString": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "string"
+          },
+          "statusDesc": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          }
+        }
+      },
+      "BodyResponseCustomerDTO": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "string"
+          },
+          "statusDesc": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CustomerDTO"
+          }
+        }
+      },
+      "BodyResponseListCustomerDTO": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "string"
+          },
+          "statusDesc": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerDTO"
+            }
+          }
+        }
+      }
+    }
+  }
+}
