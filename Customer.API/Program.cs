@@ -18,6 +18,7 @@ builder.Services.AddTransient<CreateCustomerCommandHandler>();
 builder.Services.AddTransient<DeleteCustomerCommandHandler>();
 builder.Services.AddTransient<UpdateCustomerCommandHandler>();
 builder.Services.AddTransient<GetCustomerByIdQueryHandler>();
+builder.Services.AddTransient<GetAllCustomersQueryHandler>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

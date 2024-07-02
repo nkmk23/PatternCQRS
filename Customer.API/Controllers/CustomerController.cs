@@ -13,17 +13,20 @@ namespace Customer.API.Controllers
         private readonly DeleteCustomerCommandHandler _deleteHandler;
         private readonly UpdateCustomerCommandHandler _updateHandler;
         private readonly GetCustomerByIdQueryHandler _getHandler;
+        private readonly GetAllCustomersQueryHandler _getAllHandler;
 
         public CustomerController(
             CreateCustomerCommandHandler createHandler,
             DeleteCustomerCommandHandler deleteHandler,
             UpdateCustomerCommandHandler updateHandler,
-            GetCustomerByIdQueryHandler getHandler)
+            GetCustomerByIdQueryHandler getHandler,
+            GetAllCustomersQueryHandler getAllHandler)
         {
             _createHandler = createHandler;
             _deleteHandler = deleteHandler;
             _updateHandler = updateHandler;
             _getHandler = getHandler;
+            _getAllHandler = getAllHandler;
         }
 
         [HttpPost]
@@ -55,6 +58,13 @@ namespace Customer.API.Controllers
         {
             var customer = await _getHandler.Handle(new GetCustomerByIdQuery { CustomerId = id });
             return Ok(customer);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCustomers()
+        {
+            var customers = await _getAllHandler.Handle();
+            return Ok(customers);
         }
     }
 }

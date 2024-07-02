@@ -76,5 +76,13 @@ namespace Customer.Infrastructure.Repositories
             var query = @"SELECT * FROM Customers WHERE CustomerId = @CustomerId;";
             return await connection.QueryFirstOrDefaultAsync<CustomerDTO>(query, new { CustomerId = customerId });
         }
+
+        public async Task<List<CustomerDTO>> GetAllCustomersAsync()  // Nueva implementación del método
+        {
+            using var connection = new SqlConnection(_connectionString);
+            var query = @"SELECT * FROM Customers;";
+            var customers = await connection.QueryAsync<CustomerDTO>(query);
+            return customers.ToList();
+        }
     }
 }

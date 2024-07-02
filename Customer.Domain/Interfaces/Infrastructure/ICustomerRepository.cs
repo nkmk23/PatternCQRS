@@ -13,5 +13,6 @@ namespace Customer.Domain.Interfaces.Infrastructure
         Task<int> UpdateCustomerAsync(CustomerDTO customer);
         Task<int> DeleteCustomerAsync(int customerId);
         Task<CustomerDTO> GetCustomerByIdAsync(int customerId);
+        Task<List<CustomerDTO>> GetAllCustomersAsync();
     }
 }
